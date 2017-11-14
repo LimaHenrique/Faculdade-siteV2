@@ -1,3 +1,4 @@
+'''
 from django import forms
 
 class Contato(forms.Form):
@@ -6,3 +7,4 @@ class Contato(forms.Form):
     email = forms.EmailField(label="E-mail", help_text="Informe um E-mail válido")
     telefone = forms.NumberInput()
     mensagem = forms.CharField(label = "Mensagem" , required = "true")
+'''
