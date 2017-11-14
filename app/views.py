@@ -21,16 +21,16 @@ def index(request):
     return render(request, "index.html")
 
 def contato(request):
-    return render(request, "contato.html" , context)
+    return render(request, "contato.html" )
 
 def blog(request):
-    return render(request, "blog.html" , context)
+    return render(request, "blog.html" )
 
 def eventos(request):
-    return render(request, "eventos.html" , context)
+    return render(request, "eventos.html" )
 
 def cursos(request):
-    return render(request, "cursos.html" , context)    
+    return render(request, "cursos.html" )    
     
 def inscricao(request):
-    return render(request, "inscricao.html" , context)        
+    return render(request, "inscricao.html" )        
