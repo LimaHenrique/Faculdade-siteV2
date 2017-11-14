@@ -1,18 +1,19 @@
-"""
-Definition of urls for django_get_started.
-"""
+from django.conf.urls import url
+from django.contrib import admin
+from django.conf.urls import include
+from app.views import *
+from django.views.generic import RedirectView
 
-from datetime import datetime
-from django.conf.urls import patterns, url
-'from app.forms import BootstrapAuthenticationForm
 
-# Uncomment the next lines to enable the admin:
-# from django.conf.urls import include
-# from django.contrib import admin
-# admin.autodiscover()
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+urlpatterns = [
 
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
-)
+    url(r'^$', index),
+    url(r'^contato.html', contato),
+    url(r'^inscricao.html', inscricao),
+    url(r'^index.html', index),
+    url(r'^admin/', admin.site.urls),
+    url(r'^cursos.html', cursos),
+    url(r'^eventos.html', eventos),
+    url(r'^blog.html', blog)
+    
+]
