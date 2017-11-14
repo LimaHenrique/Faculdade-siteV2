@@ -1,3 +1,4 @@
+'''
 from django.contrib import admin
 from app.models import Curso, Aluno
 from django.contrib.auth.admin import UserAdmin
