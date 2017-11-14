@@ -1,3 +1,4 @@
+'''
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import Contato
@@ -46,3 +47,4 @@ def inscricao(request):
     form = Contato()
     context = {"templates/inscricao.html" : form }
     return render(request, "templates/inscricao.html" , context)        
+'''
