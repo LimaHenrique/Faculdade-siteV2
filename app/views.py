@@ -10,3 +10,5 @@ def eventos(request):
     return render(request, "eventos.html")
 def inscricao(request):
     return render(request, "inscricao.html")
+def blog(request):
+    return render(request, "blog.html")
