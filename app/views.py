@@ -20,29 +20,29 @@ def index(request):
               'Template 9',
         ] 
     }
-    return render(request, "index.html")
+    return render(request, "templates/index.html")
 
 def contato(request):
     form = Contato()
-    context = { "contato.html" : form }
-    return render(request, "contato.html" , context)
+    context = { "templates/contato.html" : form }
+    return render(request, "templates/contato.html" , context)
 
 def blog(request):
     form = Contato()
-    context = { "blog.html" : form }
-    return render(request, "blog.html" , context)
+    context = { "templates/blog.html" : form }
+    return render(request, "templates/blog.html" , context)
 
 def eventos(request):
     form = Contato()
-    context = { "eventos.html" : form }
-    return render(request, "eventos.html" , context)
+    context = { "templates/eventos.html" : form }
+    return render(request, "templates/eventos.html" , context)
 
 def cursos(request):
     form = Contato()
-    context = { "cursos.html" : form }
-    return render(request, "cursos.html" , context)    
+    context = { "templates/cursos.html" : form }
+    return render(request, "templates/cursos.html" , context)    
     
 def inscricao(request):
     form = Contato()
-    context = {"inscricao.html" : form }
-    return render(request, "inscricao.html" , context)        
+    context = {"templates/inscricao.html" : form }
+    return render(request, "templates/inscricao.html" , context)        
