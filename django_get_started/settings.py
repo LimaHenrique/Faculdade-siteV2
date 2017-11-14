@@ -21,14 +21,19 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+with open('\home\data\mysql\MYSQLCONNSTR_localdb.txt') as arquivo:
+    linha = arquivo.read()
+    lista = linha.split(';')
+    x = dict(s.split('=',1) for s in lista)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': mysqlconndict['Database'],
-        'USER': mysqlconndict['User Id'],
-        'PASSWORD': mysqlconndict['Password'],
-        'HOST': mysqlconndict['Data Source'].split(':')[0],
-        'PORT': mysqlconndict['Data Source'].split(':')[1],
+        'NAME': x['Database'],
+        'USER': x['User Id'],
+        'PASSWORD': x['Password'],
+        'HOST': x['Data Source'].split(':')[0],
+        'PORT': x['Data Source'].split(':')[1],
     }
 }
 
