@@ -1,77 +1,48 @@
-"""
-Definition of views.
-"""
-
 from django.shortcuts import render
-from django.http import HttpRequest
-from django.template import RequestContext
-from app.models import Curso, Vestibular
-from datetime import datetime
+from django.http import HttpResponse
+from .forms import Contato
 
-def home(request):
-    """Renders the home page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/index.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'Home Page',
-            'year':datetime.now().year,
-        })
-    )
+def index(request):
+    context = {
+        'title' : 'Titulo do site',
+        'header' : 'header do site',
+        'footer' : 'Rodape do site' ,
+        'conteudo' : 'Aqui ira seu conteudo do site',
+        'lista':[
+              'Template 1' ,
+              'Template 2',
+              'Template 3',
+              'Template 4',
+              'Template 5',
+              'Template 6',
+              'Template 7',
+              'Template 8',
+              'Template 9',
+        ] 
+    }
+    return render(request, "index.html")
 
-def contact(request):
-    """Renders the contact page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/contact.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'Contato',
-            'message':'Entre em contato conosco',
-            'year':datetime.now().year,
-        })
-    )
+def contato(request):
+    form = Contato()
+    context = { "contato.html" : form }
+    return render(request, "contato.html" , context)
 
-def about(request):
-    """Renders the about page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/about.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'About',
-            'message':'Gerenciador de vestibulares',
-            'year':datetime.now().year,
-        })
-    )
+def blog(request):
+    form = Contato()
+    context = { "blog.html" : form }
+    return render(request, "blog.html" , context)
 
-def cadastro_cursos(request):
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/cadastro_cursos.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'Cadastro de cursos',
-#            'cursos': ['ADS' , 'SI', 'CC'],
-            'cursos': Curso.objects.all(),
-            'year':datetime.now().year,
-        })
-    )
-def cadastro_vestibulares(request):
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/cadastro_vestibulares.html',
-        context_instance = RequestContext(request,
-        {
-            'title':'Cadastro de vestibulares',
-            'vestibulares': Vestibular.objects.all(),
-            'year':datetime.now().year,
-         })
-    )
+def eventos(request):
+    form = Contato()
+    context = { "eventos.html" : form }
+    return render(request, "eventos.html" , context)
 
+def cursos(request):
+    form = Contato()
+    context = { "cursos.html" : form }
+    return render(request, "cursos.html" , context)    
+    
+def inscricao(request):
+    form = Contato()
+    context = {"inscricao.html" : form }
+    return render(request, "inscricao.html" , context)        
