@@ -55,7 +55,12 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-
+STATICFILES_DIRS = (
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    #os.path.join(PROJECT_DIR, 'site-packages/django_admin_bootstrapped/static'),
+)
 STATIC_ROOT = 'D:/home/site/wwwroot/app/static'
 
 # Make this unique, and don't share it with anybody.
