@@ -5,7 +5,7 @@ from app.views import *
 
 
 urlpatterns = [
-
+    url(r'^admin/', admin.site.urls),
     url(r'^$', index),
     url(r'^contato.html', contato),
     url(r'^inscricao.html', inscricao),
