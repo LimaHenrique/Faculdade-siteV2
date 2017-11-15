@@ -11,6 +11,8 @@ PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 ALLOWED_HOSTS = {'*'}
 
 ADMINS = (
