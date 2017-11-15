@@ -55,7 +55,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_URL = 'app/static/'
+STATIC_URL = '/static/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'n(bd1f1c%e8=_xad02x5qtfn%wgwpi492e$8_erx+d)!tpeoim'
