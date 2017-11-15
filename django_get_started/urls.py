@@ -1,7 +1,12 @@
 
 from django.conf.urls import url
 from app.views import *
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+urlpatterns += patterns('', (
+    r'^static/(?P<path>.*)$',
+    'django.views.static.serve',
+    {'document_root': settings.STATIC_ROOT}
+))
 
 urlpatterns = [
 
