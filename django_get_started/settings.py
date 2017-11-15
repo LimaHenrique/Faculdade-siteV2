@@ -57,7 +57,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, '../app/static'),
 )
 
 # Make this unique, and don't share it with anybody.
