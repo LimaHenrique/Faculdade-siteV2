@@ -9,17 +9,10 @@ mysqlconndict = dict(s.split('=',1) for s in mysqlconnlst)
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ALLOWED_HOSTS = {'*'}
-
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
-
-MANAGERS = ADMINS
 
 with open('\home\data\mysql\MYSQLCONNSTR_localdb.txt') as arquivo:
     linha = arquivo.read()
@@ -36,8 +29,6 @@ DATABASES = {
         'PORT': x['Data Source'].split(':')[1],
     }
 }
-
-LOGIN_URL = '/login'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
