@@ -54,7 +54,7 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-STATIC_ROOT = path.join(Faculdade-siteV2_ROOT, 'app/static').replace('\\', '/') 
+STATIC_ROOT = path.join(Faculdade-siteV2, 'app/static').replace('\\', '/') 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ()
 
