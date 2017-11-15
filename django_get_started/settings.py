@@ -54,7 +54,9 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
+STATIC_ROOT = path.join(PROJECT_ROOT, 'static').replace('\\', '/') 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = ()
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'n(bd1f1c%e8=_xad02x5qtfn%wgwpi492e$8_erx+d)!tpeoim'
