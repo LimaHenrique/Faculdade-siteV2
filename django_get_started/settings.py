@@ -6,29 +6,25 @@ from os import path
 import os
 
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
-PROJECT_DIR = os.path.dirname(__file__)
+
+mysqlconnstr = os.environ['MYSQLCONNSTR_localdb']
+mysqlconnlst = mysqlconnstr.split(';')
+mysqlconndict = dict(s.split('=',1) for s in mysqlconnlst)
+
 DEBUG = True
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 ALLOWED_HOSTS = {'*'}
-
-with open('\home\data\mysql\MYSQLCONNSTR_localdb.txt') as arquivo:
-    linha = arquivo.read()
-    lista = linha.split(';')
-    x = dict(s.split('=',1) for s in lista)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': x['Database'],
-        'USER': x['User Id'],
-        'PASSWORD': x['Password'],
-        'HOST': x['Data Source'].split(':')[0],
-        'PORT': x['Data Source'].split(':')[1],
+        'NAME': mysqlconndict['Database'],
+        'USER': mysqlconndict['User Id'],
+        'PASSWORD': mysqlconndict['Password'],
+        'HOST': mysqlconndict['Data Source'].split(':')[0],
+        'PORT': mysqlconndict['Data Source'].split(':')[1],
     }
 }
-
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
