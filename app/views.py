@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import Contato
+from forms import Contato
 
 def index(request):
     return render(request, "index.html")
