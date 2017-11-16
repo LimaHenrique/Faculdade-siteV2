@@ -1,7 +1,6 @@
 """
 Django settings for django_get_started project.
 """
-from os import path
 import os
 PROJECT_ROOT = path.dirname(path.abspath(path.dirname(__file__)))
 PROJECT_DIR = os.path.dirname(__file__)
