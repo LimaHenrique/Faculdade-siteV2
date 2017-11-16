@@ -53,11 +53,6 @@ USE_L10N = True
 # If you set this to False, Django will not use timezone-aware datetimes.
 USE_TZ = True
 
-STATIC_URL = '/static/'
-
-STATICFILES_DIR = [
-    os.path.join(BASE_DIR, "static"),
-]
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 
@@ -133,3 +128,4 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Specify the default test runner.
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+STATIC_URL = '/static/'
