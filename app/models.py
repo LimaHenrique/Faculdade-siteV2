@@ -2,11 +2,33 @@ from django.test import TestCase
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 # Create your models here.
+class Usuario(AbstractBaseUser):
+      nome = models.CharField(max_length=50)
+      ra = models.IntegerField(unique=True)
+      password = models.CharField(max_length=100)
+      perfil = models.CharField(max_length=1, default='C')
+      ativo = models.BooleanField(default=True)
 
-class Curso(models.Model):
-      sigla = models.CharField(max_length=5)
-      nome = models.CharField(max_length=200)
+      USERNAME_FIELD = 'ra'
+      REQUIRED_FIELDS = ['nome']
 
+      objects = UsuarioManager()
+
+      @property
+      def is_staff(self):
+            return self.perfil == 'C'
+
+      def has_perm(self, perm, obj=None):
+            return True
+      
+      def has_module_perms(self, app_label):
+            return True
+  
+      def get_short_name(self):
+            return self.nome
+      def get_full_name(self):
+            return self.nome
+      
       def __str__(self):
             return self.nome
 
