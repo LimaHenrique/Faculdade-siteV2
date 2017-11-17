@@ -17,6 +17,12 @@ PROJECT_DIR = os.path.dirname(__file__)
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 
+ADMINS = (
+    # ('Your Name', 'your_email@example.com'),
+)
+
+MANAGERS = ADMINS
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
