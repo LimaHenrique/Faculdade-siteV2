@@ -5,4 +5,4 @@ from django.db import models
 class app_aluno(models.Model):
    nome = models.CharField(max_length=200)
    ra = models.IntegerField(max_length=7)
-   email = models.CharField(max_length=200)
+   email = models.CharField(max_length=200)'''
