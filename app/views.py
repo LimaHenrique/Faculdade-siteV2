@@ -1,12 +1,24 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .forms import Contato
 
 def index(request):
-
     context = {
-        
-        "Nome" : "jose"
-        
+        'title' : 'Titulo do site',
+        'header' : 'header do site',
+        'footer' : 'Rodape do site' ,
+        'conteudo' : 'Aqui ira seu conteudo do site',
+        'lista':[
+              'Template 1' ,
+              'Template 2',
+              'Template 3',
+              'Template 4',
+              'Template 5',
+              'Template 6',
+              'Template 7',
+              'Template 8',
+              'Template 9',
+        ] 
     }
     return render(request, "index.html")
 
@@ -16,7 +28,7 @@ def contato(request):
     return render(request, "contato.html" , context)
 
 def blog(request):
-    form = Contato()    
+    form = Contato()
     context = { "blog.html" : form }
     return render(request, "blog.html" , context)
 
@@ -33,9 +45,4 @@ def cursos(request):
 def inscricao(request):
     form = Contato()
     context = {"inscricao.html" : form }
-    return render(request, "inscricao.html" , context)
-
-def AreaLogin(request):
-    form = Contato()
-    context = {"inscricao.html" : form }
-    return render(request, "AreaLogin.html" , context) 
+    return render(request, "inscricao.html" , context)        
